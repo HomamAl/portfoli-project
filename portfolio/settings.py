@@ -14,6 +14,8 @@ from pathlib import Path
 
 from django import apps
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -122,7 +124,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media' #When someone want to save the image, file; this will happen here
+
+MEDIA_URL = '/media/' #When someone tries to access the image they can do this here
 
 
 
