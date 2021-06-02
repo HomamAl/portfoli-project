@@ -52,73 +52,57 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="jobs/home.html">Homam Almofty</a>
+                <a class="navbar-brand" href="#">Homam Almofty</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/homam-almofty/">LinkedIn</a>
+                        <a class="nav-link" aria-current="page"
+                            href="https://www.linkedin.com/in/homam-almofty/">LinkedIn</a>
                         <a class="nav-link" href="https://github.com/HomamAl">Github</a>
                         <a class="nav-link" href="#">Resume (CV)</a>
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link active" href="#">Blog</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main role="main">
+        <div class="container">
 
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Hi, I'm Homam Almofty</h1>
-                    <p class="lead text-muted">My name is Homam Almofty and I love Python and Data Science. It's the thrill of handling data around us and making it meaningful for us!</p>
-                    <p>
-                        <a href="mailto:h.almofty@gmail.com" class="btn btn-primary my-2">Email Me</a>
-                    <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</ a-->
-                    </p>
-                </div>
-            </div>
-        </section>
+            <h1 class="text-center pt-3">Welcome to Homam's Blog</h1>
+            <br />
+            <br />
+            <h2>Latest posts</h2>
+            <hr />
 
-        <div class="album py-5 bg-light">
-            <div class="container">
+            {% for blog in blogs.all %}
 
+            <h5 class="mt-0"><a href=""><a href="">{{blog.title}}</h5></a> <small class="text-muted"><span
+                    class="text-muted badge badge-light badge-pill">{{ blog.pub_date_pretty }}</span></small></h5>
+            <br />
 
+            <img class="img-thumbnail mr-3" src="{{ blog.image.url }}" height=200 width=200 />
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <br />
 
-                    <!--This is the first job box-->
+            <p>{{ blog.summary }}</p>
+            
+            <br />
+            {% endfor %}
 
-                    {% for job in jobs.all %}
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ job.image.url }}"></img>
-                           <div class="card-body">
-                                <p class="card-text"> {{ job.summary }} </p>
-                                    </div>
-                                </div>
-                            </div>
-                    {% endfor %}
-
-                        </div>
-
-
-                    </div>
-                    
-                </div>
-            </div>
+        </div>
         </div>
 
     </main>
 
     <footer class="text-muted py-5">
         <div class="container text-center">
-           <p>&copy Homam Almofty {% now "Y" %}</p>
+            <p>&copy Homam Almofty {% now "Y" %}</p>
         </div>
     </footer>
 
