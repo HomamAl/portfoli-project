@@ -147,7 +147,7 @@ MEDIA_URL = '/media/' #When someone tries to access the image they can do this h
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
-    from local_settings import *
+    from .local_settings import *
 
 except ImportError:
     pass
