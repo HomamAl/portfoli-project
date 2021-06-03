@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'portfolio',
 ]
 
 MIDDLEWARE = [
@@ -128,10 +129,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') #When someone want to save the image, file; this will happen here
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media' #When someone want to save the image, file; this will happen here
-
 MEDIA_URL = '/media/' #When someone tries to access the image they can do this here
 
 
