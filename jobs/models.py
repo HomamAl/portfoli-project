@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models.fields import CharField
 
 class job(models.Model):
-    head = models.CharField(max_length=255, default='')
     image = models.ImageField(upload_to = 'images/') #Inside the media folder created, anytime you upload an image it goes to the images folder
     summary = CharField(max_length=200, default='') #To put cap to the summary boxes
 
