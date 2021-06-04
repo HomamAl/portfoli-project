@@ -63,7 +63,7 @@
                     <div class="navbar-nav ms-auto">
                         <a class="nav-link" aria-current="page" href="https://www.linkedin.com/in/homam-almofty/">LinkedIn</a>
                         <a class="nav-link" href="https://github.com/HomamAl">Github</a>
-                        <a class="nav-link" href="{% static 'CV.pdf' %}">Resume (CV)</a>
+                        <a class="nav-link" href="{% static '(CV).pdf' %}">Resume (CV)</a>
                         <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
                     <!--This is the first job box-->
 
                     {% for job in jobs.all %}
+                    <h5 class="mt-0"><a href="{% url 'detail' jobs.id %}">{{jobs.title}}</h5></a> <small class="text-muted"><span></span>
                     <div class="col">
                         <div class="card shadow-sm">
                             <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ job.image.url }}"></img>
