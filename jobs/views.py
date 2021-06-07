@@ -7,4 +7,4 @@ def home(request):
 
 def details(request, job_id):
     detailjobs = get_object_or_404(job, pk=job_id)    
-    return render(request, 'jobs/detail.html', {'jobs':detailjobs})
+    return render(request, 'jobs/detail.html', {'job':detailjobs})
