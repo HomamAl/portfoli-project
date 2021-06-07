@@ -7,4 +7,4 @@ class job(models.Model):
     summary = CharField(max_length=500, default='') #To put cap to the summary boxes
 
     def __str__(self):
-        return self.summary
+        return self.header
