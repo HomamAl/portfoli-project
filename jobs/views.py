@@ -3,8 +3,8 @@ from .models import job
 
 def home(request):
     jobs = job.objects
-    return render(request, 'jobs/home.html', {'jobs':jobs})
+    return render(request, 'jobs/home.html', {'job':job})
 
-def detail(request, jobs_id):
+def details(request, jobs_id):
     jobsdetail = get_object_or_404(job, pk=jobs_id)    
     return render(request, 'jobs/detail.html', {'jobs':jobsdetail})
