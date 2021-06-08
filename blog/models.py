@@ -5,9 +5,8 @@ class blog(models.Model):
     title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
     body = models.TextField()
-    para = models.TextField(default='')
     image = models.ImageField(upload_to = 'images/') #Inside the media folder created, anytime you upload an image it goes to the images folder
-    url = models.URLField(max_length=1500, default='')
+    link = models.URLField(max_length=1500, default='')
 
     def __str__(self):
         return self.title
